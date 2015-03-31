@@ -9,6 +9,6 @@ describe 'Registering a user' do
     fill_in 'Password', with: "12345678"
     fill_in 'Password confirmation', with: "12345678"
     click_button "Sign up"
-    expect(page).to have_content "Hello, Doc Lollipop!"
+    expect(page).to have_content "Welcome!"
   end
 end

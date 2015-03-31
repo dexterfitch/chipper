@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  include SimpleHashtag::Hashtaggable
+  
   belongs_to :user
 
   validates :body, :presence => true

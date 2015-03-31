@@ -31,13 +31,13 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
   gem 'launchy'
-  gem 'factory_girl'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'factory_girl_rails'
 end
 
 group :production do

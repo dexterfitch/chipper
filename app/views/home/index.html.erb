@@ -1,1 +1,40 @@
-<h1>Home view index page</h1>
+<div class="row">
+  <div class="col-md-12">
+    <p><%= link_to new_post_path(current_user), :class => "btn btn-sm btn-info" do %><i class="fa fa-pencil"></i> New Post<% end %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <% if @posts.any? %>
+      <hr>
+      <h2>Posts:</h2>
+      <% @posts.by_date.each do |post| %>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 well">
+            <div class="col-md-2">
+              <%= image_tag post.user.avatar.url(:thumb) %>
+            </div>
+            <div class="col-md-8">
+              <p>
+                <%= post.user.name %> sez:<br>
+                <span class="post-body"><%= post.body %></span><br>
+                <small><%= post.created_at.to_formatted_s(:long_ordinal) %></small>
+              </p>
+            </div>
+            <div class="col-md-2 text-right">
+              <% if post.user == current_user %>
+                <p>
+                  <%= link_to edit_post_path(post) do %><i class="fa fa-cog"></i> Edit Post<% end %><br>
+                  <%= link_to post_path(post), :data => {:confirm => "Do you really want to delete this post?", :method => "delete"} do %><i class="fa fa-trash-o"></i> Delete Post<% end %>
+                </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <h2>No posts, yet!</h2>
+    <% end %>
+  </div>
+</div>

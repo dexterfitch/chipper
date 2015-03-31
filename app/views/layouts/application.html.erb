@@ -22,7 +22,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <li>Hello, <strong><%= current_user.name %></strong>!</li>
+            <li><a id="welcome">Hello, <strong><%= current_user.name %></strong>!</a></li>
             <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
@@ -35,7 +35,18 @@
   </nav>
 
   <div class="container">
-    <%= yield %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <%= flash[:alert] %>
+        <%= flash[:notice] %>
+      </div>
+    </div>
   </div>
 
 </body>
