@@ -1,28 +1,38 @@
-== README
+##Chipper
+by Dex Fitch
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Another Twitter clone, this one built with Rails and AJAX.
 
-Things you may want to cover:
+##Setup
 
-* Ruby version
+See this project at: (heroku address pending)
 
-* System dependencies
+Otherwise, this app requires Ruby, Rails, PhantomJS and ImageMagick to run and test locally.
 
-* Configuration
+Download project folder.
 
-* Database creation
+Navigate to project folder in your terminal.
 
-* Database initialization
+Run `bundle install`
 
-* How to run the test suite
+Run `rails server`
 
-* Services (job queues, cache servers, search engines, etc.)
+Go to `localhost:3000` in your browser.
 
-* Deployment instructions
+Enjoy!
 
-* ...
+##Tests
 
+Model and integration testing can be done via rspec in the terminal.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+##Known Bugs
+
+This is a work in progress
+
+##Motivation
+
+To practice creating Rails apps with user authentication via Devise and AJAX.
+
+##License
+
+MIT License, copyright 2015 dexfitch

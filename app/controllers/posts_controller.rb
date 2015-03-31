@@ -7,7 +7,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(posts_params)
     if @post.save
-      redirect_to root_path
+      flash[:notice] = "Chip saved!"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
     else
       render :new
     end
@@ -21,6 +25,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(posts_params)
+      flash[:notice] = "Chip edited!"
       redirect_to root_path
     else
       render :edit
@@ -30,7 +35,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = "Post deleted!"
+    flash[:notice] = "Chip deleted!"
     redirect_to root_path
   end
 

@@ -11,4 +11,23 @@ describe 'Registering a user' do
     click_button "Sign up"
     expect(page).to have_content "Welcome!"
   end
+
+  it 'edits a user\'s account' do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+    click_on 'Edit profile'
+    fill_in 'Email', with: "theunicorndoctorisin@lollipop.com"
+    fill_in 'Name', with: "Doctor Lollipop"
+    fill_in 'Current password', with: user.password
+    click_button "Update"
+    expect(page).to have_content "updated successfully"
+  end
+
+  it 'deletes a user\'s account' do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+    click_on 'Edit profile'
+    click_button 'Delete my account'
+    expect(page).to have_content "successfully cancelled"
+  end
 end

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <p><%= link_to new_post_path(current_user), :class => "btn btn-sm btn-info" do %><i class="fa fa-pencil"></i> New Post<% end %></p>
+    <p><%= link_to new_post_path(current_user), remote: true, id: "new_post", class: "btn btn-sm btn-info" do %><i class="fa fa-pencil"></i> New Post<% end %></p>
   </div>
 </div>
 
