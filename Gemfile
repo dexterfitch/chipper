@@ -10,14 +10,15 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootstrap_form'
+gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'devise'
 gem 'textacular', '~> 3.0'
 gem 'simple_hashtag'
 gem 'paperclip', '~> 4.2'
+gem 'responders'
 
 group :development do
   gem 'byebug'
@@ -29,15 +30,16 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'pry'
-  gem 'launchy'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'pry'
   gem 'capybara'
-  gem 'poltergeist'
+  gem 'launchy'
   gem 'factory_girl_rails'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :production do

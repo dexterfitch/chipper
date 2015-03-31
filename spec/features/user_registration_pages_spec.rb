@@ -8,6 +8,7 @@ describe 'Registering a user' do
     fill_in 'Name', with: "Doc Lollipop"
     fill_in 'Password', with: "12345678"
     fill_in 'Password confirmation', with: "12345678"
+    attach_file('Avatar', 'public/test/tried.gif')
     click_button "Sign up"
     expect(page).to have_content "Welcome!"
   end
@@ -19,6 +20,7 @@ describe 'Registering a user' do
     fill_in 'Email', with: "theunicorndoctorisin@lollipop.com"
     fill_in 'Name', with: "Doctor Lollipop"
     fill_in 'Current password', with: user.password
+    attach_file('Avatar', 'public/test/lahey.gif')
     click_button "Update"
     expect(page).to have_content "updated successfully"
   end

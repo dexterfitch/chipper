@@ -31,7 +31,7 @@
 
       <div class="field">
         <%= f.label :avatar %>
-        <%= f.file_field :avatar, :class => "well" %>
+        <%= f.file_field :avatar, class: "well" %>
       </div>
 
       <div class="field">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Update", :class => "btn btn-primary", :id => "form-button" %>
+        <%= f.submit "Update", class: "btn btn-primary", id: "form-button" %>
       </div>
     <% end %>
   </div>
@@ -48,6 +48,6 @@
   <div class="col-md-6 text-right">
     <h3>Delete Account</h3>
 
-    <p>Done here forever? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure? This is irreversible!" }, method: :delete, :class => "btn btn-danger" %></p>
+    <p>Done here forever? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure? This is irreversible!" }, method: :delete, class: "btn btn-danger" %></p>
   </div>
 </div>

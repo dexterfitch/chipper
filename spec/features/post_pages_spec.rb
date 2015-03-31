@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'the post action' do
-  it 'adds a new post' do
+  it 'adds a new post', js: true do
     user = FactoryGirl.create(:user)
     sign_in(user)
     click_on 'New Post'
@@ -10,7 +10,7 @@ describe 'the post action' do
     expect(page).to have_content 'Being a unicorn doctor sure is tough!'
   end
 
-  it 'throws an error if there is no body' do
+  it 'throws an error if there is no body', js: true do
     user = FactoryGirl.create(:user)
     sign_in(user)
     click_on 'New Post'
@@ -18,7 +18,7 @@ describe 'the post action' do
     expect(page).to have_content 'blank'
   end
 
-  it 'deletes an existing post' do
+  it 'deletes an existing post', js: true do
     user = FactoryGirl.create(:user)
     post = FactoryGirl.create(:post)
     sign_in(user)

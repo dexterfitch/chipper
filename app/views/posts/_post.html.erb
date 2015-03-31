@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 well">
+    <div class="col-md-2">
+      <%= image_tag post.user.avatar.url(:thumb) %>
+    </div>
+    <div class="col-md-8">
+      <p>
+        <%= post.user.name %> sez:<br>
+        <span class="post-body"><%= post.body %></span><br>
+        <small><%= post.created_at.to_formatted_s(:long_ordinal) %></small>
+      </p>
+    </div>
+    <div class="col-md-2 text-right">
+      <% if post.user == current_user %>
+        <p>
+          <%= link_to edit_post_path(post) do %><i class="fa fa-cog"></i> Edit Post<% end %><br>
+          <%= link_to post_path(post), :data => {:confirm => "Do you really want to delete this post?", :method => "delete"} do %><i class="fa fa-trash-o"></i> Delete Post<% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
